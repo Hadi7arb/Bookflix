@@ -6,7 +6,7 @@ class User extends model{
 private int $id;
 private string $name;
 private string $email;
-private int $mobile;
+private string $mobile;
 private string $preference;
 private int $age;
 private string $password;
@@ -14,12 +14,12 @@ private string $password;
 protected static string $table = "users";
 
 public function __construct(array $data){
-    $this->id = $data["id"];
+    $this->id = $data["id"] ?? null;
     $this->name = $data["name"];
     $this->email = $data["email"];
     $this->mobile = $data["mobile"];
-    $this->preference = $data["preference"];
-    $this->age = $data["age"];
+    $this->preference = $data["preference"] ?? null;
+    $this->age = $data["age"] ?? null;
     $this->password = $data["password"];
 }
 
@@ -35,7 +35,7 @@ public function getEmail(): string {
     return $this->email;
 }
 
-public function getMobile(): int {
+public function getMobile(): string {
     return $this->mobile;
 }
 
@@ -59,7 +59,7 @@ public function setEmail(string $email){
     $this->email = $email;
 }
 
-public function setMobile(int $mobile){
+public function setMobile(string $mobile){
     $this->mobile = $mobile;
 }
 

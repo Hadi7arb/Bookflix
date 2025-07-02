@@ -1,7 +1,6 @@
-const slidesContainer = document.getElementById('slides');
-const movieGridContainer = document.getElementById('card-container');
 
-let totalSlides = 0;
+
+
 let currentIndex = 0;
 
 function renderMovies(movies) {
@@ -51,8 +50,9 @@ function renderMovies(movies) {
     showSlide(currentIndex);
 }
 
+
 function fetchMovies() {
-    axios.get('http://localhost/Cinema-server/controllers/get_movies.php')
+    axios.get('http://localhost/Bookflix/server/controllers/get_movies.php')
         .then(function(response) {
             const data = response.data;
             if (data.status === 200 && data.movies) {
@@ -88,3 +88,22 @@ function prevSlide() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchMovies);
+
+
+const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function prevSlide() {
+      showSlide(index - 1);
+    }
+
+    function nextSlide() {
+      showSlide(index + 1);
+    }
+

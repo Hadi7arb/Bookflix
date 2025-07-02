@@ -29,7 +29,7 @@ public static function all(mysqli $mysqli){
         $data = $query->get_result();
 
         $objects=[];
-        while ($row->fetch_assoc()){
+        while ($row = $data->fetch_assoc()){
             $objects[] = new static($row);
         }
 return $objects;

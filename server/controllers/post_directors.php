@@ -1,6 +1,6 @@
 <?php
 require("../connection/connection.php");
-require("../models/directors.php"); // Ensure this matches your model filename (Director.php)
+require("../models/directors.php"); 
 
 header('Content-Type: application/json');
 

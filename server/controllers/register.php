@@ -4,6 +4,19 @@ require("../models/User.php");
 
 header('Content-Type: application/json'); 
 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"); // Allow necessary headers
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit(); 
+}
+
+
+
 $response = [];
 $response["status"] = 200;
 
@@ -11,7 +24,7 @@ $response["status"] = 200;
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
-if (empty($data["name"]) || empty($data["email"]) || empty($data["password"]) || empty($data["mobile"]) || empty($data["age"])) {
+if (empty($data["name"]) || empty($data["email"]) || empty($data["password"]) || empty($data["mobile"])) {
     $response["message"] = "Missing required fields: name, email, password, mobile, age are required.";
     echo json_encode($response);
     exit;
@@ -30,8 +43,8 @@ $userData = [
     "name" => $data["name"],
     "email" => $data["email"],
     "mobile" => $data["mobile"],
-    "preference" => $data["preference"],
-    "age" => $data["age"],
+    "preference" => $data["preference"] ?? null,
+    "age" => $data["age"] ?? null,
     "password" => $hashedPassword
 ];
 

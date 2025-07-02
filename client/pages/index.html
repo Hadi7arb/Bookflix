@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="../styles/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="../styles/home.css">
     <title>Welcome to BookFlix</title>
 </head>
 <body>
@@ -20,19 +22,89 @@
         </div>
     </nav>
 
-    <div class="carousel" aria-label="Image slideshow">
-        <div class="slides" id="slides"></div>
-        <div class="controls">
-            <button class="arrow" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
-            <button class="arrow" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
-        </div>
+     <div class="carousel" aria-label="Image slideshow">
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: url('https://www.filmposters.com/images/posters/startrek24.jpg');" title=""></div>
+      <div class="slide" style="background-image: url('');" title=""></div>
+      <div class="slide" style="background-image: url('https://lh6.googleusercontent.com/proxy/HYQ2V8OUgRJIsxVt0QARJTLNYXa4ULGEa7j91LUYLVtDab-hXMAdI0e7D21QnBLLpUpweDcHGyz6zfAb3lwg7OBaFROrozbnV68vpW2rN7oztVDk2p0');" title=""></div>
     </div>
+    <div class="controls">
+      <button class="arrow" onclick="prevSlide()" aria-label="Previous Slide">&#10094;</button>
+      <button class="arrow" onclick="nextSlide()" aria-label="Next Slide">&#10095;</button>
+    </div>
+  </div>
 
-    <div class="card-container" id="card-container"></div>
-    
+    <div class="card-container" id="card-container">
+        <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/3lwlJL8aW6Wor9tKvME8VoMnBkn.jpg" alt="Movie Title 1">
+            <div class="card-content">
+                <h3>How to train your dragon</h3>
+                <p>Release Date: 13/06/2025</p>
+                <p>Duration: 125 minutes</p>
+                <p>Age Restriction: PG-13</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
 
-    
+        <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/9W44XSMYbjXdlXcQhD104zPhhhJ.jpg" alt="Movie Title 2">
+            <div class="card-content">
+                <h3>Hurry Up Tomorrow</h3>
+                <p>Release Date: 16/05/2025</p>
+                <p>Duration: 105 minutes</p>
+                <p>Age Restriction: R</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/v7TaX8kXMXs5yFFGR41guUDNcnB.jpg" alt="Movie Title 2">
+            <div class="card-content">
+                <h3>Kill Bill: Vol.1</h3>
+                <p>Release Date: 10/10/2003</p>
+                <p>Duration: 111 minutes</p>
+                <p>Age Restriction: R</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/lsasOSgYI85EHygtT5SvcxtZVYT.jpg" alt="Movie Title 2">
+            <div class="card-content">
+                <h3>The last samurai</h3>
+                <p>Release Date: 16/05/2025</p>
+                <p>Duration: 105 minutes</p>
+                <p>Age Restriction: R</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
+
+            <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg" alt="Movie Title 2">
+            <div class="card-content">
+                <h3>pulp fiction</h3>
+                <p>Release Date: 14/10/1994</p>
+                <p>Duration: 154 minutes</p>
+                <p>Age Restriction: R</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/yqsCU5XOP2mkbFamzAqbqntmfav.jpg" alt="Movie Title 2">
+            <div class="card-content">
+                <h3>sinners</h3>
+                <p>Release Date: 18/04/2025</p>
+                <p>Duration: 138 minutes</p>
+                <p>Age Restriction: R</p>
+                <a href="#" class="btn">Book</a>
+            </div>
+        </div>
+ 
+    </div>
+        
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../scripts/home.js"></script>
+    <script src="../scripts/movies.js"></script>
 </body>
 </html>

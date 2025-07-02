@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    
+
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await axios.post(
-                'http://localhost/Cinema-server/controllers/login.php',
+                'http://localhost/Bookflix/server/controllers/login.php',
                 {
                     email: email,
                     password: password
@@ -49,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.status === 200) {
                 responseMessage.textContent = data.message || 'Login successful!';
                 responseMessage.classList.add('success');
-
-                // console.log("Login successful! User data:", data.user);
 
                 setTimeout(() => {
                     window.location.href = 'index.html';

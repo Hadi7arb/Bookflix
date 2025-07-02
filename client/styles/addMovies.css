@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #141414; 
+    color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    font-size: 1.8em;
+    color: #E50914; 
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form .input-box {
+    margin-bottom: 20px;
+}
+
+.form .input-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #bbb;
+}
+
+.form .input-box input[type="text"],
+.form .input-box input[type="number"],
+.form .input-box input[type="url"],
+.form .input-box input[type="date"] 
+ {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    box-sizing: border-box; 
+}
+
+.form .column {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form .column .input-box {
+    flex: 1; 
+    margin-bottom: 0; 
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #E50914; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff0b18;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #28a74533;
+    color: #28a745; 
+}
+
+.message.error {
+    background-color: #dc354533; 
+    color: #dc3545; 
+}
+
+.back-home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #555; 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-home-button:hover {
+    background-color: #777;
+}
+
+@media (max-width: 600px) {
+    .form .column {
+        flex-direction: column;
+        gap: 0; 
+    }
+    .container {
+        padding: 20px;
+    }
+}

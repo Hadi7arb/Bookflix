@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
+    const ageInput = document.getElementById('age'); 
+    const preferenceInput = document.getElementById('preference');
     const responseMessage = document.getElementById('responseMessage');
     const registerButton = document.getElementById('registerButton');
 
-    if (!registrationForm || !fullNameInput || !mobileNumberInput || !emailInput || !passwordInput || !confirmPasswordInput || !responseMessage || !registerButton) {
+    if (!registrationForm || !fullNameInput || !mobileNumberInput || !emailInput || !passwordInput || !confirmPasswordInput || !responseMessage || !registerButton || !ageInput || !preferenceInput) { // UPDATED check
         console.error('Registration form elements not found.');
         return;
     }
@@ -21,11 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
         const confirmPassword = confirmPasswordInput.value.trim();
+        
+        const age = ageInput.value.trim();
+        const preference = preferenceInput.value.trim();
 
         responseMessage.textContent = '';
         responseMessage.className = 'message';
 
-        if (!fullName || !mobileNumber || !email || !password || !confirmPassword) {
+        if (!fullName || !mobileNumber || !email || !password || !confirmPassword || !age || !preference) {
             responseMessage.textContent = 'All fields are required.';
             responseMessage.classList.add('error');
             return;
@@ -56,19 +61,27 @@ document.addEventListener('DOMContentLoaded', () => {
             responseMessage.classList.add('error');
             return;
         }
+        
+       
+        if (isNaN(age) || age < 1 || age > 120) {
+            responseMessage.textContent = 'Please enter a valid age (1-120).';
+            responseMessage.classList.add('error');
+            return;
+        }
 
         registerButton.disabled = true;
         registerButton.textContent = 'Registering...';
 
         try {
             const response = await axios.post(
-                'http://localhost/Cinema-server/controllers/register.php',
+                'http://localhost/Bookflix/server/controllers/register.php',
                 {
-                    // CRITICAL CHANGE: Keys now match database column names
-                    name: fullName,       // 'name' column in DB
-                    mobile: mobileNumber, // 'mobile' column in DB
-                    email: email,         // 'email' column in DB
-                    password: password    // 'password' column in DB (remember to hash in PHP!)
+                    name: fullName,
+                    mobile: mobileNumber,
+                    email: email,
+                    password: password,
+                    age: age,           
+                    preference: preference 
                 }
             );
 
