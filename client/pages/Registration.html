@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/Registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    <section class="container">
+        <header> Registration Form</header>
+        <form id="registrationForm" action="#" class="form">
+            <div class="input-box">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter full name" required/>
+            </div>
+            <div class="input-box">
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="text" id="mobileNumber" placeholder="Enter mobile Number" required/>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Email" required/>
+                </div>
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required/>
+                </div>
+            </div>
+            <div class="input-box">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password" required/>
+            </div>
+
+            <div class="input-box">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter your age" min="1" max="120" required/>
+            </div>
+            <div class="input-box">
+                <label for="preference">Favorite Genre/Preference</label>
+                <input type="text" id="preference" placeholder="e.g., Action, Comedy, Sci-Fi" required/>
+            </div>
+
+
+            <button type="submit" id="registerButton">Register</button>
+            <p class="message" id="responseMessage"></p>
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/Registration.js"></script>
+</body>
+</html>
