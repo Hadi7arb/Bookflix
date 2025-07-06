@@ -13,7 +13,7 @@ class movies extends model{
     private string $imageURL;
 
 protected static string $table = "movies";
-protected static string $primary_key="id";
+// protected static string $primary_key="id";
 
 
 public function __construct(array $data){
@@ -26,56 +26,56 @@ public function __construct(array $data){
     $this->imageURL = $data["imageURL"];
 }
 
-public function getId(): int {
-    return $this->movieId;
-}
+// public function getId(): int {
+//     return $this->movieId;
+// }
 
-public function getTitle(): string {
-    return $this->title;
-}
+// public function getTitle(): string {
+//     return $this->title;
+// }
 
-public function getReleaseDate(): string {
-    return $this->releaseDate;
-}
+// public function getReleaseDate(): string {
+//     return $this->releaseDate;
+// }
 
-public function getDuration(): int {
-    return $this->duration;
-}
+// public function getDuration(): int {
+//     return $this->duration;
+// }
 
-public function getAgeRestriction(): string {
-    return $this->ageRestriction;
-}
+// public function getAgeRestriction(): string {
+//     return $this->ageRestriction;
+// }
 
-public function getDirectorId(): int {
-    return $this->directorId;
-}
-public function getImageURL(): string {
-    return $this->imageURL;
-}
+// public function getDirectorId(): int {
+//     return $this->directorId;
+// }
+// public function getImageURL(): string {
+//     return $this->imageURL;
+// }
 
-public function setTitle(string $title){
-    $this->title = $title;
-}
+// public function setTitle(string $title){
+//     $this->title = $title;
+// }
 
-public function setReleaseDate(string $releaseDate){
-    $this->releaseDate = $releaseDate;
-}
+// public function setReleaseDate(string $releaseDate){
+//     $this->releaseDate = $releaseDate;
+// }
 
-public function setDuration(int $duration){
-    $this->duration = $duration;
-}
+// public function setDuration(int $duration){
+//     $this->duration = $duration;
+// }
 
-public function setAgeRestriction(string $ageRestriction){
-    $this->ageRestriction = $ageRestriction;
-}
+// public function setAgeRestriction(string $ageRestriction){
+//     $this->ageRestriction = $ageRestriction;
+// }
 
-public function setDirectorId(int $directorId){
-    $this->directorId = $directorId;
-}
+// public function setDirectorId(int $directorId){
+//     $this->directorId = $directorId;
+// }
 
-public function setImageURL(string $imageURL){
-    $this->imageURL = $imageURL;
-}
+// public function setImageURL(string $imageURL){
+//     $this->imageURL = $imageURL;
+// }
 
 public function toArray(): array {
     return [
