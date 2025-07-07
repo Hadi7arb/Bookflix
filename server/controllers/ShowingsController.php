@@ -1,12 +1,15 @@
 <?php
 require("../connection/connection.php");
 require("../models/showings.php");
-require("../models/movies.php");
+require("../models/model.php");
+require("../controllers/baseController");
 
 header('Content-Type: application/json');
 
-$response = [];
-$response["status"] = 200;
+class ShowingsController extends baseController{
+
+
+public function getShowings(){
 
 if (isset($_GET["movie_id"])) {
     $movieId = $_GET["movie_id"];
@@ -40,3 +43,7 @@ if (isset($_GET["movie_id"])) {
 
 echo json_encode($response);
 exit;
+    
+}
+
+}
