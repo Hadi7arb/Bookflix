@@ -79,22 +79,5 @@ public function toArray(){
     return [$this->id, $this->name, $this->email, $this->mobile, $this->preference, $this->age, $this->password];
 }
 
-public static function findByEmail(mysqli $mysqli,  string $email){
-    $sql = sprintf("SELECT * FROM %s WHERE email = ?", 
-        static::$table);
-
-    $query = $mysqli->prepare($sql);
-
-    $query->bind_param("s", $email);
-    $query->execute();
-
-    $data = $query->get_result()->fetch_assoc();
-
-    if ($data) {
-        return new static($data);
-    } else {
-        return null;
-    }
-}
 
 }

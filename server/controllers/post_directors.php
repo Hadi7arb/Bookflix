@@ -1,10 +1,10 @@
 <?php
-require("../connection/connection.php");
-require("../models/directors.php"); 
+// require("../connection/connection.php");
+// require("../models/directors.php"); 
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
-$response = ["status" => 200, "message" => ""];
+// $response = ["status" => 200, "message" => ""];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $response["status"] = 405;

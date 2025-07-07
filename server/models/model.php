@@ -54,6 +54,18 @@ public static function create(mysqli $mysqli, array $data){
     return $query->execute();
 }
 
+public static function findByEmail($mysqli, $email){
+    $sql = sprintf("select * from %s WHERE email = ?", 
+        static :: $table);
+
+        $query = $mysqli->prepare($sql);
+        $query->bind_param("s", $email);
+        $query->execute();
+
+        $data = $query->get_result()->fetch_assoc();
+
+        return $data ? new static($data) : null;
+}
 
 }
 
