@@ -1,5 +1,5 @@
 <?php
-$apis = require(__DIR__ . '/routes/api.php');
+require(__DIR__ . '/routes/api.php');
 
 
 $base_dir = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');

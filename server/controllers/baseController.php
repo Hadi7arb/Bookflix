@@ -1,5 +1,5 @@
 <?php
-require(__DIR__ . "/../services/ResponseService.php");
+require_once(__DIR__ . "/../services/ResponseService.php");
 require(__DIR__. "/../connection/connection.php");
 
 class BaseController {

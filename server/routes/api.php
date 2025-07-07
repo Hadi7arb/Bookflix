@@ -1,5 +1,8 @@
 <?php 
-    return [
-        '/movies'       =>['controller' => 'MovieController', 'method' => 'getAllMovies'],
-        '/movies/add'    => ['controller' => 'MovieController', 'method' => 'AddMovie']
+    $apis = [
+        '/movies'       => ['controller' => 'MovieController', 'method' => 'getAllMovies'],
+        '/movies/add'   => ['controller' => 'MovieController', 'method' => 'AddMovie'],
+
+        '/users/create'    => ['controller' => 'UserController', 'method' => 'createUser'],
+        '/users/login'      => ['controller' => 'UserController', 'method' => 'userLogin']
     ];
