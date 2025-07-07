@@ -8,5 +8,9 @@
 
         '/directors'        =>['controller' => 'DirectorsController', 'method' => 'AddDirector'],
 
-        '/showings'         =>['controller' => 'ShowingsController', 'method' => 'getShowings']
+        '/showings'         =>['controller' => 'ShowingsController', 'method' => 'getShowings'],
+
+        '/seats'         =>['controller' => 'SeatsController', 'method' => 'getAllSeats']
+
+
     ];
