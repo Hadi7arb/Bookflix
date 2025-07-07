@@ -1,7 +1,7 @@
 <?php
 
     class UsersService {
-        public static function articlesToArray($users_db){
+        public static function userToArray($users_db){
 
         $results = [];
         foreach($users_db as $a){

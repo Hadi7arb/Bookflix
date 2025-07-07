@@ -12,9 +12,9 @@ class ShowingsController extends baseController{
 public function getShowings(){
 
 if (isset($_GET["movie_id"])) {
-    $movieId = $_GET["movie_id"];
+    $showingId = $_GET["movie_id"];
 
-    $showings = showings::findByMovieId($mysqli, (int)$movieId);
+    $showings = showings::findByMovieId($mysqli, (int)$showingId);
     if (empty($showings)) {
         $response["message"] = "No showings found for this movie.";
         echo json_encode($response);

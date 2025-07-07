@@ -1,10 +1,10 @@
 <?php
 
-    class MovieService {
-        public static function moviesToArray($movies_db){
+    class SeatsService {
+        public static function seatsToArray($seats_db){
 
         $results = [];
-        foreach($movies_db as $a){
+        foreach($seats as $a){
             $results[] = $a->toArray();
         }
         return $results;
